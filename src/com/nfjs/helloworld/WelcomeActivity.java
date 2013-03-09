@@ -10,9 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.nfjs.helloworld.db.DbAdapter;
+
 public class WelcomeActivity extends Activity {
-    private ListView list;
-    private GetAllNamesTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +23,11 @@ public class WelcomeActivity extends Activity {
         TextView output = (TextView) findViewById(R.id.welcome_text);
         output.setText("Hello, " + name + "!");
         
-        list = (ListView) findViewById(R.id.name_list);
-        
-        task = new GetAllNamesTask(this);
-        task.execute();
-    }
+        ListView list = (ListView) findViewById(R.id.name_list);
+        DbAdapter adapter = new DbAdapter(this);
+        adapter.open();
+        List<String> names = adapter.getAllNames();
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.welcome, menu);
-        return true;
-    }
-    
-    public void showList(List<String> names) {
-        // Build the adapter with whatever the current events are
         ArrayAdapter<String> arrayAdapter =
                 new ArrayAdapter<String>(
                 this, 
@@ -46,11 +36,11 @@ public class WelcomeActivity extends Activity {
         list.setAdapter(arrayAdapter);
     }
 
-    public void removeTask() {
-        if (task != null) {
-            task.cancel(true);
-        }
-        task = null;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.welcome, menu);
+        return true;
     }
 
 }
