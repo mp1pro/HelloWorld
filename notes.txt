@@ -1,0 +1,5 @@
+- lifecycle
+- testing
+- relative layout
+- db
+- async

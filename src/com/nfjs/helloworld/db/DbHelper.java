@@ -18,7 +18,8 @@ public class DbHelper extends SQLiteOpenHelper {
 			+ ");";
 	//@formatter:on
 
-    private static final String DATABASE_DROP = "drop table if exists names";
+    private static final String DATABASE_DROP = 
+		"drop table if exists names";
 
     @Override
     public void onCreate(SQLiteDatabase database) {
