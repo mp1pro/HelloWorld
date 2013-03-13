@@ -18,23 +18,4 @@
         android:layout_alignParentLeft="true"
         />
     
-    <TextView 
-        android:id="@+id/greeted_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Greeted"
-        android:textSize="36sp"
-        android:textStyle="italic"
-        android:layout_below="@id/welcome_text"
-        android:layout_alignParentLeft="true"
-        />
-    
-    <ListView 
-        android:id="@+id/name_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/greeted_label"
-        />
-    
-
 </RelativeLayout>
