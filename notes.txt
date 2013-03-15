@@ -3,3 +3,6 @@
 - relative layout
 - db
 - async
+
+- fragments
+- action bar
