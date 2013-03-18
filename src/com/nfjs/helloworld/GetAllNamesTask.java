@@ -12,18 +12,18 @@ public class GetAllNamesTask extends AsyncTask<Void, Void, List<String>> {
 
 	private static final String TAG = GetAllNamesTask.class.getSimpleName();
 
-	private WelcomeActivity welcomeActivity;
+	private WelcomeFragment welcomeFragment;
 
 	ProgressDialog pd;
 
-	public GetAllNamesTask(WelcomeActivity welcomeActivity) {
-		this.welcomeActivity = welcomeActivity;
+	public GetAllNamesTask(WelcomeFragment welcomeFragment) {
+		this.welcomeFragment = welcomeFragment;
 	}
 
 	@Override
 	protected void onPreExecute() {
 		//mainActivity.clearList();
-		pd = new ProgressDialog(welcomeActivity);
+		pd = new ProgressDialog(welcomeFragment.getActivity());
 		pd.setMessage("Loading Names ...");
 		pd.show();
 	}
@@ -40,7 +40,7 @@ public class GetAllNamesTask extends AsyncTask<Void, Void, List<String>> {
 		}
 
 		Log.v(TAG, "Running doInBackground");
-        DbAdapter dba = new DbAdapter(welcomeActivity);
+        DbAdapter dba = new DbAdapter(welcomeFragment.getActivity());
         dba.open();
 
 		List<String> names = dba.getAllNames();
@@ -52,8 +52,8 @@ public class GetAllNamesTask extends AsyncTask<Void, Void, List<String>> {
 	@Override
 	protected void onPostExecute(List<String> names) {
 		Log.v(TAG, "Running onPostExecute");
-		welcomeActivity.showList(names);
-		welcomeActivity.removeTask();
+		welcomeFragment.showList(names);
+		welcomeFragment.removeTask();
 		pd.hide();
 		pd.dismiss();  // fixes problem with memory leak when exiting MainActivity
 	}
