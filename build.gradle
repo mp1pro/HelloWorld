@@ -12,9 +12,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 17
-}
 
-android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
