@@ -1,6 +1,6 @@
 package com.nfjs.helloworld;
 
-public interface FragmentListener {
+public interface MyFragmentListener {
 
 	void updateName(String name);
 

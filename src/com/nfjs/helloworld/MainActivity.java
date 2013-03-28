@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
 public class MainActivity extends FragmentActivity implements
-		FragmentListener {
+		MyFragmentListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

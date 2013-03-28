@@ -17,7 +17,7 @@ public class MainFragment extends Fragment {
 	
 	LinearLayout layoutView;
 	
-	FragmentListener fragmentListener;
+	MyFragmentListener fragmentListener;
 
     @Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,9 +53,9 @@ public class MainFragment extends Fragment {
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 		try {
-			fragmentListener = (FragmentListener) activity;
+			fragmentListener = (MyFragmentListener) activity;
 		} catch (ClassCastException e) {
-			throw new ClassCastException(activity.toString() + " must implement FragmentListener");
+			throw new ClassCastException(activity.toString() + " must implement MyFragmentListener");
 		}
 	}
 }
