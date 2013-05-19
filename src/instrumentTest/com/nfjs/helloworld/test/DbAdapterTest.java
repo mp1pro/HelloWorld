@@ -24,11 +24,12 @@ public class DbAdapterTest extends AndroidTestCase {
     }
 
     public void testDeleteName() {
+        int count = dba.getAllNames().size();
         dba.insertName("Fred");
-        assertEquals(1, dba.getAllNames().size());
+        assertEquals(count + 1, dba.getAllNames().size());
         
         dba.deleteName("Fred");
-        assertEquals(0, dba.getAllNames().size());
+        assertEquals(count, dba.getAllNames().size());
     }
 
 }
