@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.3'
+        classpath 'com.android.tools.build:gradle:0.4'
     }
 }
 
@@ -12,13 +12,14 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 17
+    buildToolsVersion "17.0"
 
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src']
             resources.srcDirs = ['src']
-            aild.srcDirs = ['src']
+            aild.ext.srcDirs = ['src']
             renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
