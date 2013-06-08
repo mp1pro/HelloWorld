@@ -22,20 +22,26 @@
         android:layout_height="wrap_content"
         android:hint="Please enter your name"
         />
-    
-    <Button 
-        android:id="@+id/name_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit name"
-        android:onClick="sayHello"
-        />
 
-    <Button 
-        android:id="@+id/hello_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/name_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="sayHello"
+            android:text="Submit name" />
+
+        <Button
+            android:id="@+id/hello_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Welcome" />
+
+    </LinearLayout>
     
 </LinearLayout>
