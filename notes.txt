@@ -1,0 +1,6 @@
+- activity lifecycle
+- Log
+- async tasks
+- list adapters
+- persistence
+- layouts
