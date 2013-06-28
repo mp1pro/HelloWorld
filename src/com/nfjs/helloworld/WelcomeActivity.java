@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.nfjs.helloworld.db.DbAdapter;
 
 public class WelcomeActivity extends Activity {
+    private DbAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class WelcomeActivity extends Activity {
         output.setText("Hello, " + name + "!");
         
         ListView list = (ListView) findViewById(R.id.name_list);
-        DbAdapter adapter = new DbAdapter(this);
+        adapter = new DbAdapter(this);
         adapter.open();
         List<String> names = adapter.getAllNames();
 
@@ -41,6 +42,13 @@ public class WelcomeActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.welcome, menu);
         return true;
+    }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        
+        adapter.close();
     }
 
 }
