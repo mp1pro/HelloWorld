@@ -2,9 +2,9 @@ package com.nfjs.helloworld.test;
 
 import java.util.List;
 
-import com.nfjs.helloworld.db.DbAdapter;
-
 import android.test.AndroidTestCase;
+
+import com.nfjs.helloworld.db.DbAdapter;
 
 public class DbAdapterTest extends AndroidTestCase {
     private DbAdapter dba;
