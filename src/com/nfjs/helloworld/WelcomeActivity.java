@@ -27,6 +27,8 @@ public class WelcomeActivity extends Activity {
         ListView list = (ListView) findViewById(R.id.name_list);
         adapter = new DbAdapter(this);
         adapter.open();
+        adapter.insertName(name);
+        
         List<String> names = adapter.getAllNames();
 
         ArrayAdapter<String> arrayAdapter =

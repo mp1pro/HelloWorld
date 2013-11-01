@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.nfjs.helloworld.db.DbAdapter;
-
 public class MainActivity extends Activity {
 
     @Override
@@ -30,9 +28,6 @@ public class MainActivity extends Activity {
     public void sayHello(View view) {
         EditText et = (EditText) findViewById(R.id.name);
         String name = et.getText().toString();
-        DbAdapter dba = new DbAdapter(this);
-        dba.open();
-        dba.insertName(name);
         // Toast.makeText(this, "Hello, " + name + "!", Toast.LENGTH_LONG).show();
         Intent hello = new Intent(this, WelcomeActivity.class);
         hello.putExtra("name", name);
