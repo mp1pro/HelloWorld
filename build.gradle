@@ -4,22 +4,26 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.6.1'
+        classpath 'com.android.tools.build:gradle:0.9.0'
     }
 }
 
 apply plugin: 'android'
 
+repositories {
+    mavenCentral()
+}
+
 android {
-    compileSdkVersion 18
-    buildToolsVersion "17.0"
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
 
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
             java.srcDirs = ['src']
             resources.srcDirs = ['src']
-            aild.ext.srcDirs = ['src']
+            aidl.srcDirs = ['src']
             renderscript.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
