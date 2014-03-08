@@ -9,13 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends Activity {
+    private Button b;
+    private EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        Button b = (Button) findViewById(R.id.hello_button);
+        et = (EditText) findViewById(R.id.name);
+        b = (Button) findViewById(R.id.hello_button);
         b.setOnClickListener(new View.OnClickListener() {
             
             @Override
@@ -26,7 +29,6 @@ public class MainActivity extends Activity {
     }
     
     public void sayHello(View view) {
-        EditText et = (EditText) findViewById(R.id.name);
         String name = et.getText().toString();
         // Toast.makeText(this, "Hello, " + name + "!", Toast.LENGTH_LONG).show();
         Intent hello = new Intent(this, WelcomeActivity.class);
